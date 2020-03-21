@@ -24,3 +24,8 @@ export class UserModel {
   @ApiPropertyOptional({enum: UserRole})
   roles?: UserRole[];
 }
+
+export class TokenPayloadModel {
+  @ApiProperty()
+  user: UserModel;
+}
