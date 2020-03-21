@@ -5,6 +5,8 @@ import { UserRegisterResponseDto, UserRegisterRequestDto } from "../dto";
 import { UserInterceptor } from "../interceptors/user.interceptor";
 import { User } from "../decorators/user.decorator";
 import { AuthGuard } from "../guards/auth.guard";
+import { Roles } from "../decorators/roles.decorator";
+import { UserRole } from "../models";
 
 @Controller('user')
 // @UseInterceptors(UserInterceptor)
@@ -24,6 +26,7 @@ export class UserController {
 
   @Get()
   @UseGuards(AuthGuard)
+  @Roles(UserRole.ADMIN)
   getUser(@User() user) {
     return {user};
   }
