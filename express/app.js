@@ -2,9 +2,8 @@ const express = require('express')
 const app = express()
 
 app.get('/', function (req, res) {
-  res.send('hello world from express')
+  res.send('hello world')
 })
-
 
 app.get('/user', 
 
@@ -31,7 +30,6 @@ app.get('/user',
   },
 )
 
-exports.app=app;
+exports.app = app;
 
 // app.listen(3000, () => console.log(`Example app listening on port 3000!`));
-
